@@ -48,16 +48,24 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 ## Notebook
 
   1. Load Dataset
-  2. Explore Dataset Information*
+     
+     ![image](https://github.com/user-attachments/assets/db7b0ece-d311-4fea-9700-13a09417d148)
+
+  2. Explore Dataset Information
+
+     ![image](https://github.com/user-attachments/assets/493258b7-c511-4c27-a206-a3de6e801e88)
+
   3. Convert Dataset to DataFrame for Exploration
+
+     ![image](https://github.com/user-attachments/assets/1b580b05-d4ea-4b65-a697-a70b64044853)
+
   4. Visualize Sample Data
+     
+     ![image](https://github.com/user-attachments/assets/aefcaff0-3baf-47f0-af17-82230297a434)
+
   5. Data Preprocessing and Augmentation
 
-==> Sample Data Visualization:
-
-![image](https://github.com/user-attachments/assets/aefcaff0-3baf-47f0-af17-82230297a434)
-
-
+     
 ## Installation and Deployment
 
 ### Local Server
