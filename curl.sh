@@ -1,0 +1,1 @@
+curl "http://localhost:5001/visualize_predictions?num_images=12" --output prediction.png
