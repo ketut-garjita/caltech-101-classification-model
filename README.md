@@ -45,6 +45,19 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 └── output/                 # Directory visualizations, and other output files
 ```
 
+## Notebook
+
+  1. Load Dataset
+  2. Explore Dataset Information*
+  3. Convert Dataset to DataFrame for Exploration
+  4. Visualize Sample Data
+  5. Data Preprocessing and Augmentation
+
+==> Sample Data Visualization:
+
+![image](https://github.com/user-attachments/assets/aefcaff0-3baf-47f0-af17-82230297a434)
+
+
 ## Installation and Deployment
 
 ### Local Server
