@@ -33,16 +33,16 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 
 ## Repository Structure
 ```
-├── README.md           # Documentation for the project
-├── Dockerfile          # Instructions to containerize the application
-├── notebook.ipynb      # Jupyter notebook for dataset loading, feature engineering, EDA, and preparation
-├── train_model.ipynb   # Script for training the model (jupyter-notebook)
-├── train_model.py      # Script for training the model
-├── predict.ipynb       # Script for making predictions (jupyter-notebook)
-├── predict.py          # Script for making predictions
-├── data/               # Directory for storing datasets (optional, not included in version control)
-├── model/              # Directory for saving trained models
-└── output/             # Directory for logs, visualizations, and other output files
+├── README.md               # Documentation for the project
+├── Dockerfile              # Instructions to containerize the application
+├── notebook.ipynb          # Jupyter notebook for dataset loading, feature engineering, EDA, and preparation
+├── train_model.ipynb       # Script for training the model (jupyter-notebook)
+├── train_model.py          # Script for training the model
+├── predict_model.ipynb     # Script for making predictions (jupyter-notebook)
+├── predict_model.py        # Script for making predictions
+├── data/                   # Directory for storing datasets (optional, not included in version control)
+├── model/                  # Directory for saving trained models
+└── output/                 # Directory for logs, visualizations, and other output files
 ```
 
 ## Installation and Deployment
@@ -50,18 +50,32 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 ### Local Server
 - Clone this repository
   ```
-  git clone https://github.com/your-repo/caltech101-classification.git  
-  cd caltech101-classification  
+  git clone https://github.com/ketutgarjitao/caltech-101-classification-model.git  
+  cd caltech-101-classification-model 
+  ```  
+- Install library dependences
   ```
-  
-  _Note: Libraries dependecies are included in Dockerfile script_:
-
-  RUN pip install flask tensorflow pillow
-
-- Train the model
+  pip install flask tensorflow pillow tensorflow_datasets matplotlib
+  ```
+- Train model
   ```
   python train_model.py  
   ```
+- Predict model
+  ```
+  python predict_model.py
+  ```
+- Test model prediction
+  ```
+  ./curl.sh
+  ```
+- Check prediction result on output/ dorectory
+  
+- Stop predict model session
+  ```
+  Ctrl-C
+  ```
+  
 
 ### Docker
 - Build the Docker image
@@ -75,7 +89,8 @@ The model is based on the MobileNetV2 architecture with transfer learning:
   
   _Note: Libraries dependecies are included in Dockerfile script_:
 
-  RUN pip install flask tensorflow pillow
+  _RUN pip install flask tensorflow pillow tensorflow_datasets matplotlib_
+  
 
 ### AWS Cloud
 
@@ -89,7 +104,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
   Connect to EC2 instance
   ```
   cd
-  mkdir code outputs models
+  mkdir code output model
   ```
   
 - Copy files from local to AWS EC2
