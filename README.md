@@ -49,22 +49,30 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 ## Notebook
 
   1. Load Dataset
+
+     [Load Dataset](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/images/load_dataset.png)
      
      ![image](https://github.com/user-attachments/assets/db7b0ece-d311-4fea-9700-13a09417d148)
 
-  2. Explore Dataset Information
+  1. Explore Dataset Information
 
+     [Explore Dataset Information](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/images/Explore%20Dataset%20Information.png)
+     
      ![image](https://github.com/user-attachments/assets/493258b7-c511-4c27-a206-a3de6e801e88)
 
   3. Convert Dataset to DataFrame for Exploration
 
+     [Convert Dataset to DataFrame for Exploration](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/images/Convert%20Dataset%20to%20DataFrame%20for%20Exploration.png)
+     
      ![image](https://github.com/user-attachments/assets/1b580b05-d4ea-4b65-a697-a70b64044853)
 
-  4. Visualize Sample Data
+  5. Visualize Sample Data
+
+     [Visualize Sample Data](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/images/Visualize%20Sample%20Data.png)
      
      ![image](https://github.com/user-attachments/assets/aefcaff0-3baf-47f0-af17-82230297a434)
 
-  5. Data Preprocessing and Augmentation with Auto Tune
+  7. Data Preprocessing and Augmentation with Auto Tune
 
 
 ## Modelling
