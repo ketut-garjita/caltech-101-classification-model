@@ -64,7 +64,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
      
      ![image](https://github.com/user-attachments/assets/aefcaff0-3baf-47f0-af17-82230297a434)
 
-  5. Data Preprocessing and Augmentation
+  5. Data Preprocessing and Augmentation with Auto Tune
 
      
 ## Installation and Deployment
