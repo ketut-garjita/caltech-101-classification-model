@@ -101,7 +101,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
   ```
   ./curl.sh
   ```
-- Check prediction result on output/ dorectory
+- Check prediction result on output/ directory
   ```
   ls output/Visualize_Prediction.png
   ```  
