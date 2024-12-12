@@ -215,7 +215,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 - Metrics: Test accuracy: ~XX%.
 - Visualizations
   - Training and validation accuracy/loss plots (output of predict_model.py):
-  - 
+    
     [Training and validation accuracy](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/output/Training_Validation_Accuracy.png)
     
     ![image](https://github.com/user-attachments/assets/d23674c3-132e-41de-90c9-3c80f9fae73a)
