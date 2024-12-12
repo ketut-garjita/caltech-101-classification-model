@@ -43,7 +43,8 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 ├── predict_model.py        # Script for making predictions
 ├── data/                   # Directory for storing datasets (optional, not included in version control)
 ├── model/                  # Directory for saving trained model
-└── output/                 # Directory visualizations, and other output files
+├── output/                 # Directory visualizations, and other output files
+└── images/                 # Notebook images screenshot
 ```
 
 ## Notebook
