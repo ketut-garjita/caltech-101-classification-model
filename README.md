@@ -78,7 +78,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 
 ## Modelling
 1. Prepare model (**train_model.py**)
-    - Pre-processing
+  - Pre-processing
        - Load Dataset
        - Explore Dataset Information
        - Convert Dataset to DataFrame for Exploration
