@@ -200,11 +200,11 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 - Trained Model: Saved as caltech101_cnn_model.keras.
 - Metrics: Test accuracy: ~XX%.
 - Visualizations
-  - Training and validation accuracy/loss plots:
+  - Training and validation accuracy/loss plots (output of predict_model.py):
     ![image](https://github.com/user-attachments/assets/d23674c3-132e-41de-90c9-3c80f9fae73a)
     ![image](https://github.com/user-attachments/assets/2e053933-452b-428d-ae96-84253df49eee)
 
-  - True vs Prediction:
+  - True vs Prediction (output of curl.sh):
     ![image](https://github.com/user-attachments/assets/88095a74-2162-4e8e-8d12-0a2aafa18ebb)
 
 
