@@ -67,12 +67,12 @@ The model is based on the MobileNetV2 architecture with transfer learning:
   5. Data Preprocessing and Augmentation with Auto Tune
 
 
-
 ## Modelling
 1. Create model
-2. Train and tune model
-3. Compile model
-4. Predict model
+2. Compile model
+3. Train and tune model
+4. Evaluate and save the model
+5. Visualize training history
 
 
 ## Installation and Deployment
