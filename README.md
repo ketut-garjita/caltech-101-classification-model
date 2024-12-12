@@ -68,18 +68,22 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 
 
 ## Modelling
-1. Pre-processing
-   - Load Dataset
-   - Explore Dataset Information
-   - Convert Dataset to DataFrame for Exploration
-   - Visualize Sample Data
-   - Data Preprocessing and Augmentation
-2. Create model
-3. Compile model
-4. Train and tune model
-5. Evaluate and save the model
-6. Visualize training history
+1. Prepare model (**train_model.py**)
+   - Pre-processing
+     - Load Dataset
+     - Explore Dataset Information
+     - Convert Dataset to DataFrame for Exploration
+     - Visualize Sample Data
+     - Data Preprocessing and Augmentation
+  - Create model
+  - Compile model
+  - Train and tune model
+  - Evaluate and save the model
+  - Visualize training history
 
+2. Predict model (**predict_model.py**)
+   
+3. Test model prediction (**curl.sh**)
 
 ## Installation and Deployment
 
