@@ -208,17 +208,6 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 
 The model uses transfer learning for computational efficiency. The base MobileNetV2 layers are frozen, and only the top layers are trained on the Caltech-101 dataset.
 
-## Prediction
-- Run the prediction script:
-```
-python predict.py --image path_to_image.jpg
-```
-
-This will output the predicted category.
-
-## Visualization
-
-Example training history:
 
 ## Challenges and Considerations
 - Dataset Imbalance: Some categories have fewer images. This was mitigated using data augmentation.
