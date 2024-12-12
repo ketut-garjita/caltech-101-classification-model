@@ -69,7 +69,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
      
 ## Installation and Deployment
 
-### Local Server
+### 1. Local Server
 - Clone this repository
   ```
   git clone https://github.com/ketutgarjitao/caltech-101-classification-model.git  
@@ -99,7 +99,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
   ```
   
 
-### Docker
+### 2. Docker
 - Build the Docker image
   ```
   docker build -t caltech101-cnn-model .
@@ -132,7 +132,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
   docker stop caltech101-cnn-model-service
   ```
   
-### AWS Cloud
+### 3. AWS Cloud
 
 - Add rule on "Edit inbound rules" in EC2 Security Groups
   - Type: Custom TCP
@@ -192,6 +192,9 @@ The model is based on the MobileNetV2 architecture with transfer learning:
     Ctrl-C
     ```
   - exit from container
+
+### 4. DockerHub 
+
 
 ## Outputs
 - Trained Model: Saved as caltech101_cnn_model.keras.
