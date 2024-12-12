@@ -6,7 +6,7 @@ import os
 import tensorflow_datasets as tfds
 
 # Load model and dataset
-model_path = 'models/caltech101_cnn_model.keras'
+model_path = 'model/caltech101_cnn_model.keras'
 model = tf.keras.models.load_model(model_path)
 
 # Load dataset
@@ -18,7 +18,7 @@ test_data = dataset["test"].map(lambda img, lbl: (tf.image.resize(img, (128, 128
 app = Flask(__name__)
 
 # Prediction Function
-def visualize_predictions(dataset, model, num_images=16, output_file="outputs/Visualize_Prediction.png"):
+def visualize_predictions(dataset, model, num_images=16, output_file="output/Visualize_Prediction.png"):
     class_names = info.features['label'].names
     for images, labels in dataset.take(1):
         preds = model.predict(images)
@@ -38,7 +38,7 @@ def visualize_predictions(dataset, model, num_images=16, output_file="outputs/Vi
 def handle_visualize_predictions():
     try:
         num_images = int(request.args.get('num_images', 16))
-        output_file = "outputs/Visualize_Prediction.png"
+        output_file = "output/Visualize_Prediction.png"
         
         visualize_predictions(test_data, model, num_images, output_file)
         

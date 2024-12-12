@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Copy files
 COPY web_service.py /app/
-COPY models/caltech101_cnn_model.keras /app/
+COPY model/caltech101_cnn_model.keras /app/
 
 # Install dependencies
 RUN pip install flask tensorflow pillow tensorflow_datasets matplotlib

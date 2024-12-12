@@ -69,7 +69,7 @@ print("\nStep 4: Visualize Sample Data")
 plt.imshow(train_df.loc[5, "image_data"])
 plt.title(f"Label: {train_df.loc[5, 'label_name']}")
 plt.axis("off")
-plt.savefig("outputs/image_sample.png")      
+plt.savefig("output/image_sample.png")      
 
 # **Step 5: Data Preprocessing and Augmentation**
 print("\nStep 5: Data Preprocessing and Augmentation")
@@ -142,7 +142,7 @@ test_loss, test_accuracy = model.evaluate(test_data)
 print(f"Test Accuracy: {test_accuracy}")
 
 # model.save("caltech101_model.keras")
-model.save('models/caltech101_cnn_model.keras')
+model.save('model/caltech101_cnn_model.keras')
 
 # **Step 11: Visualize Training History**
 print("\nStep 11: Visualize Training History")
@@ -155,7 +155,7 @@ plt.legend()
 plt.title("Training and Validation Accuracy")
 plt.xlabel("Epoch")
 plt.ylabel("Accuracy")
-plt.savefig("outputs/Training_Validation_Accuracy.png")
+plt.savefig("output/Training_Validation_Accuracy.png")
 
 # Training and Validation Loss
 plt.figure(figsize=(6, 4))
@@ -165,4 +165,4 @@ plt.legend()
 plt.title("Training and Validation Loss")
 plt.xlabel("Epoch")
 plt.ylabel("Loss")
-plt.savefig("outputs/Training_Validation_Loss.png")
+plt.savefig("output/Training_Validation_Loss.png")
