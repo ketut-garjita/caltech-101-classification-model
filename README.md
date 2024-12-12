@@ -91,15 +91,23 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 
   _RUN pip install flask tensorflow pillow tensorflow_datasets matplotlib_
   
+- Install curl package
+  ```
+  docker exec -it caltech101-cnn-model-service bash
+  apt update
+  apt install curl
+  ```
 - Test model prediction
   ```
   ./curl.sh
   ```
 - Check prediction result on output/ dorectory
-  
+  ```
+  ls output/Visualize_Prediction.png
+  ```  
 - Stop docker container
   ```
-  docker stop caltech101-app
+  docker stop caltech101-cnn-model-service
   ```
   
 ### AWS Cloud
