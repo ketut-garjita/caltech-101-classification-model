@@ -5,7 +5,7 @@ FROM python:3.11-slim
 WORKDIR /app
 
 # Copy files
-COPY web_service.py /app/
+COPY predict_model.py /app/
 COPY model/caltech101_cnn_model.keras /app/
 
 # Install dependencies
