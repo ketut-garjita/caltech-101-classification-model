@@ -1,2 +1,2 @@
-docker build -t caltech101-service .
-docker run -d -p 5000:5000 --name caltech101-app caltech101-service
+docker build -t caltech101-cnn-model .
+docker run -d -p 5000:5000 --name caltech101-cnn-model-service caltech101-cnn-model
