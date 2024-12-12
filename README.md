@@ -36,11 +36,13 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 ├── README.md           # Documentation for the project
 ├── Dockerfile          # Instructions to containerize the application
 ├── notebook.ipynb      # Jupyter notebook for dataset loading, feature engineering, EDA, and preparation
+├── train_model.ipynb   # Script for training the model (jupyter-notebook)
 ├── train_model.py      # Script for training the model
+├── predict.ipynb       # Script for making predictions (jupyter-notebook)
 ├── predict.py          # Script for making predictions
 ├── data/               # Directory for storing datasets (optional, not included in version control)
-├── models/             # Directory for saving trained models
-└── outputs/            # Directory for logs, visualizations, and other output files
+├── model/              # Directory for saving trained models
+└── output/             # Directory for logs, visualizations, and other output files
 ```
 
 ## Installation and Deployment
