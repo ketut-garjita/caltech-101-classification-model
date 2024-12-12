@@ -91,7 +91,17 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 
   _RUN pip install flask tensorflow pillow tensorflow_datasets matplotlib_
   
-
+- Test model prediction
+  ```
+  ./curl.sh
+  ```
+- Check prediction result on output/ dorectory
+  
+- Stop docker container
+  ```
+  docker stop caltech101-app
+  ```
+  
 ### AWS Cloud
 
 - Add rule on "Edit inbound rules" in EC2 Security Groups
