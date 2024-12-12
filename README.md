@@ -80,11 +80,11 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 ### Docker
 - Build the Docker image
   ```
-  docker build -t caltech101-service .
+  docker build -t caltech101-model .
   ```
 - Run the container
   ```
-  docker run -d -p 8000:5800 --name caltech101-app caltech101-service 
+  docker run -d -p 5000:5000 --name caltech101-model-service caltech101-model
   ```
   
   _Note: Libraries dependecies are included in Dockerfile script_:
