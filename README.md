@@ -76,7 +76,8 @@ The model is based on the MobileNetV2 architecture with transfer learning:
   7. Data Preprocessing and Augmentation with Auto Tune
 
 
-## Modelling
+## Modelling Modules
+
 1. Prepare model (**train_model.py**)
 
    [train_model.py](https://github.com/ketut-garjita/caltech-101-classification-model/blob/3026834a2fcd82ef0ea8de1a7db6102efb417b5c/train_model.py)
@@ -93,11 +94,11 @@ The model is based on the MobileNetV2 architecture with transfer learning:
     - Evaluate and save the model
     - Visualize training history
 
-3. Predict model (**predict_model.py**)
+2. Predict model (**predict_model.py**)
 
    [predict_model.py](https://github.com/ketut-garjita/caltech-101-classification-model/blob/f41711f98d8f38aad1def3cd6d2be1b2e7c1a9ef/predict_model.py)
    
-4. Test model prediction (**curl.sh**)
+3. Test model prediction (**curl.sh**)
 
    [curl.sh](https://github.com/ketut-garjita/caltech-101-classification-model/blob/4acbd1cd747e9a0e03c8e033aed1096648da2e69/curl.sh)
 
