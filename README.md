@@ -91,6 +91,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
     - Visualize training history
 
 2. Predict model (**predict_model.py**)
+   [predict_model.py program](https://github.com/ketut-garjita/caltech-101-classification-model/predict_model.py)
    ```
    python predict_model.py
    ```
