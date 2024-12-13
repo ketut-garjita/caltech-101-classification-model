@@ -107,7 +107,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 ## Installation and Deployment
 
 ### 1. Local Server
-- Open port 5000
+- Open port 5000 (default Flask port)
   ```
   sudo ufw enable
   sudo ufw allow 5000
