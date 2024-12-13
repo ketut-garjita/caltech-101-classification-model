@@ -49,6 +49,8 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 
 ## Notebook
 
+   [notebook.ipynb](https://github.com/ketut-garjita/caltech-101-classification-model/blob/a2089e3adf20a98453f5ec089d0f3bae366b7505/notebook.ipynb)
+
   1. Load Dataset
 
      [Load Dataset](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/images/load_dataset.png)
