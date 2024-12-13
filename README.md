@@ -90,25 +90,16 @@ The model is based on the MobileNetV2 architecture with transfer learning:
     - Evaluate and save the model
     - Visualize training history
 
-2. Predict model
+2. Predict model (**predict_model.py**)
 
    [predict_model.py](https://github.com/ketut-garjita/caltech-101-classification-model/blob/f41711f98d8f38aad1def3cd6d2be1b2e7c1a9ef/predict_model.py)
    
-   ```
-   python predict_model.py
-   ```
+3. Test model prediction (**curl.sh**)
 
-   ![image](https://github.com/user-attachments/assets/3bab78a1-aa46-422d-98d0-fffd9dd66f52)
-
-   
-4. Test model prediction
-
-   [curl.sh](https://github.com/ketut-garjita/caltech-101-classification-model/blob/4acbd1cd747e9a0e03c8e033aed1096648da2e69/curl.sh)
-
-   Open new terminal session.
    ```
    curl "http://localhost:5001/visualize_predictions?num_images=16" --output outputs/prediction.png
    ```
+
    
 ## Installation and Deployment
 
@@ -133,14 +124,30 @@ The model is based on the MobileNetV2 architecture with transfer learning:
   python train_model.py  
   ```
 - Predict model
+
+  Open new terilminal session.
+  
   ```
   python predict_model.py
   ```
+  ![image](https://github.com/user-attachments/assets/3bab78a1-aa46-422d-98d0-fffd9dd66f52)
+  
 - Test model prediction
+
+  Open new terilminal session.
+  
   ```
   ./curl.sh
   ```
+  
+  [curl.sh](https://github.com/ketut-garjita/caltech-101-classification-model/blob/4acbd1cd747e9a0e03c8e033aed1096648da2e69/curl.sh)
+
+  
 - Check prediction result on output/ directory
+
+  ```
+  ls output/Visualize_Prediction.png
+  ```
   
 - Stop predict model session
   ```
