@@ -44,7 +44,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 ├── data/                   # Directory for storing datasets (optional, not included in version control)
 ├── model/                  # Directory for saving trained model
 ├── output/                 # Directory visualizations, and other output files
-└── images/                 # Notebook images screenshot
+└── images/                 # Notebook images screenshots
 ```
 
 ## Notebook
