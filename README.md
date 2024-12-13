@@ -133,7 +133,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
   ```
 - Predict model
 
-  Open new terilminal session.
+  Open new terminal session.
   
   ```
   python predict_model.py
@@ -142,7 +142,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
   
 - Test model prediction
 
-  Open new terilminal session.
+  Open new terminal session.
   
   ```
   ./curl.sh
