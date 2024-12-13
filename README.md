@@ -96,10 +96,12 @@ The model is based on the MobileNetV2 architecture with transfer learning:
    
 3. Test model prediction (**curl.sh**)
 
+   [curl.sh](https://github.com/ketut-garjita/caltech-101-classification-model/blob/4acbd1cd747e9a0e03c8e033aed1096648da2e69/curl.sh)
+
    ```
    curl "http://localhost:5001/visualize_predictions?num_images=16" --output outputs/prediction.png
    ```
-
+   
    
 ## Installation and Deployment
 
@@ -139,9 +141,6 @@ The model is based on the MobileNetV2 architecture with transfer learning:
   ```
   ./curl.sh
   ```
-  
-  [curl.sh](https://github.com/ketut-garjita/caltech-101-classification-model/blob/4acbd1cd747e9a0e03c8e033aed1096648da2e69/curl.sh)
-
   
 - Check prediction result on output/ directory
 
