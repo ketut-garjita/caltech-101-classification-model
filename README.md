@@ -99,6 +99,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 
    
 4. Test model prediction (**curl.sh**)
+   Open new terminal session.
    ```
    curl "http://localhost:5001/visualize_predictions?num_images=16" --output outputs/prediction.png
    ```
