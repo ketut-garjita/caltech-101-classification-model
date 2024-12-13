@@ -91,8 +91,18 @@ The model is based on the MobileNetV2 architecture with transfer learning:
     - Visualize training history
 
 2. Predict model (**predict_model.py**)
+   ```
+   python predict_model.py
+   ```
+
+   ![image](https://github.com/user-attachments/assets/3bab78a1-aa46-422d-98d0-fffd9dd66f52)
+
    
-3. Test model prediction (**curl.sh**)
+4. Test model prediction (**curl.sh**)
+   ```
+   curl "http://localhost:5001/visualize_predictions?num_images=12" --output outputs/prediction.png
+   ```
+   _We can modify curl.sh script for example by replacing num_image parameter such as from 12 to 16._
 
 ## Installation and Deployment
 
@@ -149,6 +159,10 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 - Test model prediction
   ```
   ./curl.sh
+  ```
+  Or could be run from terminal command prompt:
+  ```
+  ocker exec -it caltech101-cnn-model-service bash /app/curl.sh
   ```
 - Check prediction result on output/ directory
   ```
