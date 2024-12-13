@@ -1,16 +1,23 @@
 from flask import Flask, request, jsonify, send_file
 import tensorflow as tf
 import numpy as np
-import matplotlib.pyplot as plt
-import os
 import tensorflow_datasets as tfds
+import os
+
+# Set Matplotlib cache directory to 
+os.environ["MPLCONFIGDIR"] = "/tmp/matplotlib"
+
+# Import Matplotlib after configuration
+import matplotlib.pyplot as plt
 
 # Load model and dataset
 model_path = 'model/caltech101_cnn_model.keras'
 model = tf.keras.models.load_model(model_path)
 
 # Load dataset
+#tfds_dir = "data/"
 tfds_dir = "data/"
+
 dataset, info = tfds.load("caltech101", as_supervised=True, with_info=True, data_dir=tfds_dir)
 test_data = dataset["test"].map(lambda img, lbl: (tf.image.resize(img, (128, 128)) / 255.0, lbl)).batch(32)
 
@@ -47,5 +54,4 @@ def handle_visualize_predictions():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    os.makedirs('outputs', exist_ok=True)
     app.run(host='0.0.0.0', port=5000)

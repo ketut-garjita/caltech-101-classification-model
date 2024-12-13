@@ -8,7 +8,8 @@ WORKDIR /app
 RUN mkdir /app/model /app/data /app/output
 
 # Copy files
-COPY predict_model.py /app/
+COPY predict_model.py /app
+COPY data /app/data
 COPY model/caltech101_cnn_model.keras /app/model
 COPY curl.sh /app
 
