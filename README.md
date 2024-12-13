@@ -264,8 +264,8 @@ The model is based on the MobileNetV2 architecture with transfer learning:
   - True vs Prediction (output of curl.sh):
     
     [Visualize_Prediction](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/output/Visualize_Prediction.png)
-    
-    ![image](https://github.com/user-attachments/assets/88095a74-2162-4e8e-8d12-0a2aafa18ebb)
+
+    ![image](https://github.com/user-attachments/assets/7cc66253-e8e0-4b3f-a432-e3de126ed3e2)   
 
 
 ## Model
