@@ -102,7 +102,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
    ```
    curl "http://localhost:5001/visualize_predictions?num_images=12" --output outputs/prediction.png
    ```
-   _We can modify curl.sh script for example by replacing num_image parameter such as from 12 to 16._
+   _We can modify curl.sh script for example by replacing num_image parameter such as from 16 to 12._
 
 ## Installation and Deployment
 
