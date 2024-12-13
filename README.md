@@ -162,7 +162,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
   ```
   Or could be run from terminal command prompt:
   ```
-  ocker exec -it caltech101-cnn-model-service bash /app/curl.sh
+  docker exec -it caltech101-cnn-model-service bash /app/curl.sh
   ```
 - Check prediction result on output/ directory
   ```
