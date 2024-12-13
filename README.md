@@ -167,7 +167,11 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 - Check prediction result on output/ directory
   ```
   ls output/Visualize_Prediction.png
-  ```  
+  ```
+  Or from terminal command prompt:
+  ```
+  docker exec -it caltech101-cnn-model-service bash -c "ls /app/output/Visualize_Prediction.png"
+  ```
 - Stop docker container
   ```
   docker stop caltech101-cnn-model-service
