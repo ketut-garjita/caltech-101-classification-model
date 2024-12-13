@@ -1,1 +1,1 @@
-curl "http://localhost:5001/visualize_predictions?num_images=12" --output outputs/prediction.png
+curl "http://localhost:5000/visualize_predictions?num_images=16" --output output/prediction.png
