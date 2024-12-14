@@ -1,0 +1,133 @@
+(myenv) ubuntu@ip-addresses:~/caltech-101-classification-model$ python train_model.py 
+2024-12-14 05:28:08.849140: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2024-12-14 05:28:08.853339: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2024-12-14 05:28:08.866183: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1734154088.887876    6619 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1734154088.894141    6619 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-12-14 05:28:08.915892: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+
+Step 1: Load Dataset
+2024-12-14 05:28:10.865488: W external/local_tsl/tsl/platform/cloud/google_auth_provider.cc:184] All attempts to get a Google authentication bearer token failed, returning an empty token. Retrieving token from files failed with "NOT_FOUND: Could not locate the credentials file.". Retrieving token from GCE failed with "FAILED_PRECONDITION: Error executing an HTTP request: libcurl code 6 meaning 'Couldn't resolve host name', error details: Could not resolve host: metadata.google.internal".
+Downloading and preparing dataset 131.05 MiB (download: 131.05 MiB, generated: 132.86 MiB, total: 263.91 MiB) to data/caltech101/3.0.2...
+Extraction completed...: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:10<00:00,  3.55s/ file]
+Dl Size...: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 131/131 [00:10<00:00, 12.29 MiB/s]
+Dl Completed...: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:10<00:00, 10.66s/ url]
+Extraction completed...: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 9145/9145 [00:05<00:00, 1554.78 file/s]
+Dataset caltech101 downloaded and prepared to data/caltech101/3.0.2. Subsequent calls will reuse this data.                                                               
+2024-12-14 05:28:32.606603: E external/local_xla/xla/stream_executor/cuda/cuda_driver.cc:152] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+
+Step 2: Explore Dataset Information*
+tfds.core.DatasetInfo(
+    name='caltech101',
+    full_name='caltech101/3.0.2',
+    description="""
+    Caltech-101 consists of pictures of objects belonging to 101 classes, plus one
+    `background clutter` class. Each image is labelled with a single object. Each
+    class contains roughly 40 to 800 images, totalling around 9k images. Images are
+    of variable sizes, with typical edge lengths of 200-300 pixels. This version
+    contains image-level labels only. The original dataset also contains bounding
+    boxes.
+    """,
+    homepage='https://doi.org/10.22002/D1.20086',
+    data_dir=PosixGPath('/tmp/tmpjnminf2ktfds'),
+    file_format=tfrecord,
+    download_size=Unknown size,
+    dataset_size=132.86 MiB,
+    features=FeaturesDict({
+        'image': Image(shape=(None, None, 3), dtype=uint8),
+        'image/file_name': Text(shape=(), dtype=string),
+        'label': ClassLabel(shape=(), dtype=int64, num_classes=102),
+    }),
+    supervised_keys=('image', 'label'),
+    disable_shuffling=False,
+    splits={
+        'test': <SplitInfo num_examples=6084, num_shards=1>,
+        'train': <SplitInfo num_examples=3060, num_shards=1>,
+    },
+    citation="""@article{FeiFei2004LearningGV,
+      title={Learning Generative Visual Models from Few Training Examples: An Incremental Bayesian Approach Tested on 101 Object Categories},
+      author={Li Fei-Fei and Rob Fergus and Pietro Perona},
+      journal={Computer Vision and Pattern Recognition Workshop},
+      year={2004},
+    }""",
+)
+Label Names: ['accordion', 'airplanes', 'anchor', 'ant', 'background_google', 'barrel', 'bass', 'beaver', 'binocular', 'bonsai', 'brain', 'brontosaurus', 'buddha', 'butterfly', 'camera', 'cannon', 'car_side', 'ceiling_fan', 'cellphone', 'chair', 'chandelier', 'cougar_body', 'cougar_face', 'crab', 'crayfish', 'crocodile', 'crocodile_head', 'cup', 'dalmatian', 'dollar_bill', 'dolphin', 'dragonfly', 'electric_guitar', 'elephant', 'emu', 'euphonium', 'ewer', 'faces', 'faces_easy', 'ferry', 'flamingo', 'flamingo_head', 'garfield', 'gerenuk', 'gramophone', 'grand_piano', 'hawksbill', 'headphone', 'hedgehog', 'helicopter', 'ibis', 'inline_skate', 'joshua_tree', 'kangaroo', 'ketch', 'lamp', 'laptop', 'leopards', 'llama', 'lobster', 'lotus', 'mandolin', 'mayfly', 'menorah', 'metronome', 'minaret', 'motorbikes', 'nautilus', 'octopus', 'okapi', 'pagoda', 'panda', 'pigeon', 'pizza', 'platypus', 'pyramid', 'revolver', 'rhino', 'rooster', 'saxophone', 'schooner', 'scissors', 'scorpion', 'sea_horse', 'snoopy', 'soccer_ball', 'stapler', 'starfish', 'stegosaurus', 'stop_sign', 'strawberry', 'sunflower', 'tick', 'trilobite', 'umbrella', 'watch', 'water_lilly', 'wheelchair', 'wild_cat', 'windsor_chair', 'wrench', 'yin_yang']
+
+Step 3: Convert Dataset to DataFrame for Exploration
+2024-12-14 05:28:32.760335: I tensorflow/core/kernels/data/tf_record_dataset_op.cc:376] The default buffer size is 262144, which is overridden by the user specified `buffer_size` of 8388608
+2024-12-14 05:28:32.772346: W tensorflow/core/kernels/data/cache_dataset_ops.cc:914] The calling iterator did not fully read the dataset being cached. In order to avoid unexpected truncation of the dataset, the partially cached contents of the dataset  will be discarded. This can happen if you have an input pipeline similar to `dataset.cache().take(k).repeat()`. You should use `dataset.take(k).cache().repeat()` instead.
+2024-12-14 05:28:32.772630: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+   label    image_shape                                         image_data      label_name
+0     70  (225, 300, 3)  [[[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0], ...          pagoda
+1     10  (297, 300, 3)  [[[255, 253, 255], [250, 245, 249], [254, 249,...           brain
+2     51  (225, 300, 3)  [[[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0], ...    inline_skate
+3     26  (280, 300, 3)  [[[34, 43, 40], [40, 49, 46], [61, 70, 67], [7...  crocodile_head
+4      7  (214, 300, 3)  [[[192, 192, 192], [192, 192, 192], [192, 192,...          beaver
+
+Step 4: Visualize Sample Data
+
+Step 5: Data Preprocessing and Augmentation
+
+Step 6: Create the Model
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/mobilenet_v2/mobilenet_v2_weights_tf_dim_ordering_tf_kernels_1.0_128_no_top.h5
+9406464/9406464 ━━━━━━━━━━━━━━━━━━━━ 2s 0us/step  
+Model: "sequential_1"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━c┩
+│ mobilenetv2_1.00_128 (Functional)    │ (None, 4, 4, 1280)          │       2,257,984 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ global_average_pooling2d             │ (None, 1280)                │               0 │
+│ (GlobalAveragePooling2D)             │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout (Dropout)                    │ (None, 1280)                │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense (Dense)                        │ (None, 102)                 │         130,662 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 2,388,646 (9.11 MB)
+ Trainable params: 130,662 (510.40 KB)
+ Non-trainable params: 2,257,984 (8.61 MB)
+
+Step 7: Compile the Model
+
+Step 8: Add Early Stopping
+
+Step 9: Train the Model
+Epoch 1/20
+96/96 ━━━━━━━━━━━━━━━━━━━━ 62s 558ms/step - accuracy: 0.0968 - loss: 4.9351 - val_accuracy: 0.6864 - val_loss: 1.4706
+Epoch 2/20
+96/96 ━━━━━━━━━━━━━━━━━━━━ 55s 536ms/step - accuracy: 0.5744 - loss: 1.7105 - val_accuracy: 0.7778 - val_loss: 0.9780
+Epoch 3/20
+96/96 ━━━━━━━━━━━━━━━━━━━━ 64s 625ms/step - accuracy: 0.7283 - loss: 1.0363 - val_accuracy: 0.7914 - val_loss: 0.8239
+Epoch 4/20
+96/96 ━━━━━━━━━━━━━━━━━━━━ 63s 624ms/step - accuracy: 0.7746 - loss: 0.8549 - val_accuracy: 0.8057 - val_loss: 0.7547
+Epoch 5/20
+96/96 ━━━━━━━━━━━━━━━━━━━━ 56s 548ms/step - accuracy: 0.8000 - loss: 0.6958 - val_accuracy: 0.8309 - val_loss: 0.6940
+Epoch 6/20
+96/96 ━━━━━━━━━━━━━━━━━━━━ 89s 621ms/step - accuracy: 0.8363 - loss: 0.5636 - val_accuracy: 0.8292 - val_loss: 0.6374
+Epoch 7/20
+96/96 ━━━━━━━━━━━━━━━━━━━━ 53s 513ms/step - accuracy: 0.8602 - loss: 0.5233 - val_accuracy: 0.8363 - val_loss: 0.6183
+Epoch 8/20
+96/96 ━━━━━━━━━━━━━━━━━━━━ 52s 507ms/step - accuracy: 0.8719 - loss: 0.4483 - val_accuracy: 0.8353 - val_loss: 0.6272
+Epoch 9/20
+96/96 ━━━━━━━━━━━━━━━━━━━━ 55s 535ms/step - accuracy: 0.8789 - loss: 0.4129 - val_accuracy: 0.8309 - val_loss: 0.6584
+Epoch 10/20
+96/96 ━━━━━━━━━━━━━━━━━━━━ 63s 620ms/step - accuracy: 0.8793 - loss: 0.4034 - val_accuracy: 0.8470 - val_loss: 0.5771
+Epoch 11/20
+96/96 ━━━━━━━━━━━━━━━━━━━━ 63s 623ms/step - accuracy: 0.9051 - loss: 0.3528 - val_accuracy: 0.8399 - val_loss: 0.6407
+Epoch 12/20
+96/96 ━━━━━━━━━━━━━━━━━━━━ 63s 616ms/step - accuracy: 0.9038 - loss: 0.3430 - val_accuracy: 0.8240 - val_loss: 0.6674
+Epoch 13/20
+96/96 ━━━━━━━━━━━━━━━━━━━━ 56s 550ms/step - accuracy: 0.9075 - loss: 0.3090 - val_accuracy: 0.8434 - val_loss: 0.6122
+Epoch 14/20
+96/96 ━━━━━━━━━━━━━━━━━━━━ 54s 528ms/step - accuracy: 0.9167 - loss: 0.2770 - val_accuracy: 0.8388 - val_loss: 0.6165
+Epoch 15/20
+96/96 ━━━━━━━━━━━━━━━━━━━━ 53s 518ms/step - accuracy: 0.9206 - loss: 0.2556 - val_accuracy: 0.8393 - val_loss: 0.6604
+
+Step 10: Evaluate and Save the Model
+191/191 ━━━━━━━━━━━━━━━━━━━━ 33s 171ms/step - accuracy: 0.8481 - loss: 0.5718
+Test Accuracy: 0.8469756841659546
+
+Step 11: Visualize Training History
