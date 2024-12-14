@@ -280,18 +280,22 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 
 #### Option 2: Using (Pull) DockerHub Image
    - Pull Image
+     
      ```
      docker pull ketutgarjita/caltech101-cnn-model:latest
      ```
    - Start and Run Container
+     
      ```
      docker run -d -p 5000:5000 --name caltech101-cnn-model-service ketutgarjita/caltech101-cnn-model
      ```
-   - Test model prediction  
+   - Test model prediction
+     
      ```
      ./curl.sh
      ```
    - Check output
+     
      ```
      ls -l output/prediction.png
      ```
