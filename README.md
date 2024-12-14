@@ -151,7 +151,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 - Check prediction result on output/ directory
 
   ```
-  ls output/Visualize_Prediction.png
+  ls output/prediction.png
   ```
   
 - Stop predict model session
@@ -190,11 +190,11 @@ The model is based on the MobileNetV2 architecture with transfer learning:
   ```
 - Check prediction result on output/ directory
   ```
-  ls output/Visualize_Prediction.png
+  ls output/prediction.png
   ```
   Or from terminal command prompt:
   ```
-  docker exec -it caltech101-cnn-model-service bash -c "ls /app/output/Visualize_Prediction.png"
+  docker exec -it caltech101-cnn-model-service bash -c "ls /app/output/prediction.png"
   ```
 - Stop docker container
   ```
@@ -252,7 +252,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
   ```
   python predict_model.py
   ```
-  ![image](https://github.com/user-attachments/assets/3bab78a1-aa46-422d-98d0-fffd9dd66f52)
+  [aws_predict_model_log](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/output/aws_predict_model_log.txt)
   
 - Test model prediction
 
@@ -261,12 +261,11 @@ The model is based on the MobileNetV2 architecture with transfer learning:
   ```
   ./curl.sh
   ```
-  [aws_predict_model_log](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/output/aws_predict_model_log.txt)
   
 - Check prediction result on output/ directory
 
   ```
-  ls output/Visualize_Prediction.png
+  ls output/prediction.png
   ```
   
 - Stop predict model session
@@ -274,7 +273,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
   Ctrl-C
   ```
 
-#### Option 2: Pull DockerHub Image
+#### Option 2: Using (Pull) DockerHub Image
 - Pull Image
   ```
   docker pull ketutgarjita/caltech101-cnn-model:latest
