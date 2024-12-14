@@ -215,8 +215,8 @@ The model is based on the MobileNetV2 architecture with transfer learning:
   ```
   docker tag caltech101-cnn-model:latest ketutgarjita/caltech101-cnn-model:latest
   docker login
-  Username: 
-  Password: $
+     Username: 
+     Password:
   docker push ketutgarjita/caltech101-cnn-model:latest
   ```
   
