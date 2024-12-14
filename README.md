@@ -49,33 +49,33 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 
 ## Notebook
 
-   [notebook.ipynb](https://github.com/ketut-garjita/caltech-101-classification-model/blob/a2089e3adf20a98453f5ec089d0f3bae366b7505/notebook.ipynb)
+[notebook.ipynb](https://github.com/ketut-garjita/caltech-101-classification-model/blob/a2089e3adf20a98453f5ec089d0f3bae366b7505/notebook.ipynb)
 
-  1. Load Dataset
+1. Load Dataset
 
-     [Load Dataset](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/images/load_dataset.png)
-     
-     ![image](https://github.com/user-attachments/assets/db7b0ece-d311-4fea-9700-13a09417d148)
+  [Load Dataset](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/images/load_dataset.png)
+  
+  ![image](https://github.com/user-attachments/assets/db7b0ece-d311-4fea-9700-13a09417d148)
 
-  1. Explore Dataset Information
+2. Explore Dataset Information
 
-     [Explore Dataset Information](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/images/Explore%20Dataset%20Information.png)
-     
-     ![image](https://github.com/user-attachments/assets/493258b7-c511-4c27-a206-a3de6e801e88)
+  [Explore Dataset Information](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/images/Explore%20Dataset%20Information.png)
+  
+  ![image](https://github.com/user-attachments/assets/493258b7-c511-4c27-a206-a3de6e801e88)
 
-  3. Convert Dataset to DataFrame for Exploration
+3. Convert Dataset to DataFrame for Exploration
 
-     [Convert Dataset to DataFrame for Exploration](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/images/Convert%20Dataset%20to%20DataFrame%20for%20Exploration.png)
-     
-     ![image](https://github.com/user-attachments/assets/1b580b05-d4ea-4b65-a697-a70b64044853)
+  [Convert Dataset to DataFrame for Exploration](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/images/Convert%20Dataset%20to%20DataFrame%20for%20Exploration.png)
+  
+  ![image](https://github.com/user-attachments/assets/1b580b05-d4ea-4b65-a697-a70b64044853)
 
-  5. Visualize Sample Data
+4. Visualize Sample Data
 
-     [Visualize Sample Data](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/images/Visualize%20Sample%20Data.png)
-     
-     ![image](https://github.com/user-attachments/assets/aefcaff0-3baf-47f0-af17-82230297a434)
+  [Visualize Sample Data](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/images/Visualize%20Sample%20Data.png)
+  
+  ![image](https://github.com/user-attachments/assets/aefcaff0-3baf-47f0-af17-82230297a434)
 
-  7. Data Preprocessing and Augmentation with Auto Tune
+5. Data Preprocessing and Augmentation with Auto Tune
 
 
 ## Modelling Modules
@@ -112,6 +112,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 ## Installation and Deployment
 
 ### 1. Local Server
+
 - Open port 5000 (default Flask port)
   ```
   sudo ufw enable
@@ -157,10 +158,10 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 - Stop predict model session
   ```
   Ctrl-C
-  ```
-  
+  ```  
 
 ### 2. Docker
+
 - Build the Docker image
   ```
   docker build -t caltech101-cnn-model .
@@ -224,72 +225,72 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 
 #### Option 1: Install on EC2 Instance Virtual Environment
 
-- Start AWS EC2 Instance
-- Connect to Instance
-- Create the virtual environment
-   ```
-   sudo apt update 
-   sudo apt install python3.12-venv
-   source myenv/bin/activate
-   ```
--  Clone this repository
-  ```
-  git clone https://github.com/ketut-garjita/caltech-101-classification-model.git  
-  cd caltech-101-classification-model 
-  ```  
-- Install library dependences
-  ```
-  pip install flask tensorflow pillow tensorflow_datasets matplotlib
-  ```
-- Train model
-  ```
-  python train_model.py  
-  ```
-  [aws_train_model_log](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/output/aws_train_model_log.txt)
-  
-- Predict model
+   - Start AWS EC2 Instance
+   - Connect to Instance
+   - Create the virtual environment
+      ```
+      sudo apt update 
+      sudo apt install python3.12-venv
+      source myenv/bin/activate
+      ```
+   -  Clone this repository
+     ```
+     git clone https://github.com/ketut-garjita/caltech-101-classification-model.git  
+     cd caltech-101-classification-model 
+     ```  
+   - Install library dependences
+     ```
+     pip install flask tensorflow pillow tensorflow_datasets matplotlib
+     ```
+   - Train model
+     ```
+     python train_model.py  
+     ```
+     [aws_train_model_log](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/output/aws_train_model_log.txt)
+     
+   - Predict model
+      
+     ```
+     python predict_model.py
+     ```
+     [aws_predict_model_log](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/output/aws_predict_model_log.txt)
+     
+   - Test model prediction
    
-  ```
-  python predict_model.py
-  ```
-  [aws_predict_model_log](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/output/aws_predict_model_log.txt)
-  
-- Test model prediction
-
-  Open new terminal session.
-  
-  ```
-  ./curl.sh
-  ```
-  
-- Check prediction result on output/ directory
-
-  ```
-  ls output/prediction.png
-  ```
-  
-- Stop predict model session
-  ```
-  Ctrl-C
-  ```
+     Open new terminal session.
+     
+     ```
+     ./curl.sh
+     ```
+     
+   - Check prediction result on output/ directory
+   
+     ```
+     ls output/prediction.png
+     ```
+     
+   - Stop predict model session
+     ```
+     Ctrl-C
+     ```
 
 #### Option 2: Using (Pull) DockerHub Image
-- Pull Image
-  ```
-  docker pull ketutgarjita/caltech101-cnn-model:latest
-  ```
-- Start and Run Container
-  ```
-  docker run -d -p 5000:5000 --name caltech101-cnn-model-service ketutgarjita/caltech101-cnn-model
-  ```
-- Test model prediction  
-  ```
-  ./curl.sh
-  ```
-- Check output
-  ```
-  ls -l output/prediction.png
-  ```
+   - Pull Image
+     ```
+     docker pull ketutgarjita/caltech101-cnn-model:latest
+     ```
+   - Start and Run Container
+     ```
+     docker run -d -p 5000:5000 --name caltech101-cnn-model-service ketutgarjita/caltech101-cnn-model
+     ```
+   - Test model prediction  
+     ```
+     ./curl.sh
+     ```
+   - Check output
+     ```
+     ls -l output/prediction.png
+     ```
   
 
 ## Outputs
