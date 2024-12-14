@@ -169,37 +169,43 @@ The model is based on the MobileNetV2 architecture with transfer learning:
   docker run -d -p 5000:5000 --name caltech101-cnn-model-service caltech101-cnn-model
   ```
   
-  _Note: Libraries dependecies are included in Dockerfile script_:
-
-  _RUN pip install flask tensorflow pillow tensorflow_datasets matplotlib_
+    _Note: Libraries dependecies are included in Dockerfile script_:
   
-- Install curl package (this step only need once)
-  ```
-  docker exec -it caltech101-cnn-model-service bash
-  apt update
-  apt install curl
-  ```
-- Test model prediction
-  ```
-  ./curl.sh
-  ```
-  Or could be run from terminal command prompt:
-  ```
-  docker exec -it caltech101-cnn-model-service bash /app/curl.sh
-  ```
-- Check prediction result on output/ directory
-  ```
-  ls -l output/prediction.png
-  ```
-  Or from terminal command prompt:
-  ```
-  docker exec -it caltech101-cnn-model-service bash -c "ls /app/output/prediction.png"
-  ```
-- Stop docker container
-  ```
-  docker stop caltech101-cnn-model-service
-  ```
+    _RUN pip install flask tensorflow pillow tensorflow_datasets matplotlib_
+  
+ - Test model prediction
+     
+     - Connect to container
+       ```
+       docker exec -it caltech101-cnn-model-service bash
+       ```
+     - Install curl package (this etsp only need once)
+       ```
+       apt update
+       apt install curl
+       ```
+     - Add an execute mode of the curl.sh (this step only need once)
+       ```
+       chmod +x curl.sh
+       ```
+     - Run curl.sh
+       ```
+       ./curl.sh
+       ```
+     - Check output
+       ```
+       ls -l output/prediction.png
+       ```
+     - Exit from container
+       ```
+       exit
+       ```
+  - Stop container
+     ```
+     docker stop caltech101-cnn-model-service
+     ```
 
+     
 ### 3. DockerHub 
 
 - Create DockerHub Repository
