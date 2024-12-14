@@ -120,7 +120,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
   ```
 - Clone this repository
   ```
-  git clone https://github.com/ketut-garjitao/caltech-101-classification-model.git  
+  git clone https://github.com/ketut-garjita/caltech-101-classification-model.git  
   cd caltech-101-classification-model 
   ```  
 - Install library dependences
