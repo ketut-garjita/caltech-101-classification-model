@@ -290,14 +290,27 @@ The model is based on the MobileNetV2 architecture with transfer learning:
      ```
    - Test model prediction
      
-     ```
-     ./curl.sh
-     ```
-   - Check output
-     
-     ```
-     ls -l output/prediction.png
-     ```
+     - Connect to container
+       ```
+       docker exec -it caltech101-cnn-model-service bash
+       ```
+     - Install curl package (only need one time of installation)
+       ```
+       apt update
+       apt install curl
+       ```
+     - Add an execute mode of the curl.sh (only need one time)
+       ```
+       chmod +x curl.sh
+       ```
+     - Run curl.sh
+       ```
+       ./curl.sh
+       ```
+     - Check output
+       ```
+       ls -l output/prediction.png
+       ```
   
 
 ## Outputs
