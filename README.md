@@ -228,21 +228,25 @@ The model is based on the MobileNetV2 architecture with transfer learning:
    - Start AWS EC2 Instance
    - Connect to Instance
    - Create the virtual environment
+     
       ```
       sudo apt update 
       sudo apt install python3.12-venv
       source myenv/bin/activate
       ```
    -  Clone this repository
+     
      ```
      git clone https://github.com/ketut-garjita/caltech-101-classification-model.git  
      cd caltech-101-classification-model 
      ```  
    - Install library dependences
+     
      ```
      pip install flask tensorflow pillow tensorflow_datasets matplotlib
      ```
    - Train model
+     
      ```
      python train_model.py  
      ```
