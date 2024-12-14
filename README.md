@@ -200,70 +200,96 @@ The model is based on the MobileNetV2 architecture with transfer learning:
   ```
   docker stop caltech101-cnn-model-service
   ```
-  
-### 3. AWS Cloud
 
-- Add rule on "Edit inbound rules" in EC2 Security Groups
-  - Type: Custom TCP
-  - Port range: 5000
-  - Source: Anywhere-IPv4
+### 3. DockerHub 
 
-- Create directories
+- Create DockerHub Repository
 
-  Connect to EC2 instance
+  [https://hub.docker.com](https://hub.docker.com/)
+
+  Repository Name: ketutgarjita/caltech101-cnn-model
+
+- Push local image to DockerHub
   ```
-  cd
-  mkdir code output model
-  ```
-  
-- Copy files from local to AWS EC2
-  ```
-  scp -i "~/.ssh/ml-zoomcamp-gar-key.pem" Dockerfile ubuntu@ec2-108-137-82-199.ap-southeast-3.compute.amazonaws.com:/home/ubuntu/caltech-101
-  scp -i "~/.ssh/ml-zoomcamp-gar-key.pem" code/train_model.py ubuntu@ec2-108-137-82-199.ap-southeast-3.compute.amazonaws.com:/home/ubuntu/caltech-101/code  
+  docker tag caltech101-cnn-model:latest ketutgarjita/caltech101-cnn-model:latest
+  docker login
+  Username: 
+  Password: $
+  docker push ketutgarjita/caltech101-cnn-model:latest
   ```
   
-- Deploy on AWS Linux
-  - Train model 
-    ```
-    # Train model
-    python train_model.py
-    ```
-  - Test API access from browser
-    http://Public IPv4 address:5000
-  - Stop Flask Service
-    ```
-    Ctrl-C
-    ```
-  
-- Deploy on AWS running Docker
-  - Build image and run container
-    ```
-    cd /home/ubuntu
-    docker build -t caltech101-service .
-    docker run -d -p 80:5000 --name caltech101-app caltech101-service
-    ```
-    
-    _Note: Libraries dependecies are included in Dockerfile script_:
- 
-    RUN pip install flask tensorflow pillow
-  
-  - Train model
-    ```
-    docker exec -it caltech101-app bash
-    cd code
-    python train_model.py
-    ```
-  - Test API access from browser
-    http://Public IPv4 address:5000
- 
-  - Stop Flask Service
-    ```
-    Ctrl-C
-    ```
-  - exit from container
+### 4. AWS Cloud
 
-### 4. DockerHub 
+#### Option 1: Install on EC2 Instance Virtual Environment
 
+- Start AWS EC2 Instance
+- Connect to Instance
+- Create the virtual environment
+   ```
+   sudo apt update 
+   sudo apt install python3.12-venv
+   source myenv/bin/activate
+   ```
+-  Clone this repository
+  ```
+  git clone https://github.com/ketut-garjita/caltech-101-classification-model.git  
+  cd caltech-101-classification-model 
+  ```  
+- Install library dependences
+  ```
+  pip install flask tensorflow pillow tensorflow_datasets matplotlib
+  ```
+- Train model
+  ```
+  python train_model.py  
+  ```
+  [aws_train_model_log](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/output/aws_train_model_log.txt)
+  
+- Predict model
+   
+  ```
+  python predict_model.py
+  ```
+  ![image](https://github.com/user-attachments/assets/3bab78a1-aa46-422d-98d0-fffd9dd66f52)
+  
+- Test model prediction
+
+  Open new terminal session.
+  
+  ```
+  ./curl.sh
+  ```
+  [aws_predict_model_log](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/output/aws_predict_model_log.txt)
+  
+- Check prediction result on output/ directory
+
+  ```
+  ls output/Visualize_Prediction.png
+  ```
+  
+- Stop predict model session
+  ```
+  Ctrl-C
+  ```
+
+#### Option 2: Pull DockerHub Image
+- Pull Image
+  ```
+  docker pull ketutgarjita/caltech101-cnn-model:latest
+  ```
+- Start and Run Container
+  ```
+  docker run -d -p 5000:5000 --name caltech101-cnn-model-service ketutgarjita/caltech101-cnn-model
+  ```
+- Test model prediction  
+  ```
+  ./curl.sh
+  ```
+- Check output
+  ```
+  ls -l output/prediction.png
+  ```
+  
 
 ## Outputs
 - Trained Model: Saved as caltech101_cnn_model.keras.
