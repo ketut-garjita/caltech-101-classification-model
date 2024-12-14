@@ -49,33 +49,33 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 
 ## Notebook
 
-[notebook.ipynb](https://github.com/ketut-garjita/caltech-101-classification-model/blob/a2089e3adf20a98453f5ec089d0f3bae366b7505/notebook.ipynb)
-
-1. Load Dataset
-
-  [Load Dataset](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/images/load_dataset.png)
+  [notebook.ipynb](https://github.com/ketut-garjita/caltech-101-classification-model/blob/a2089e3adf20a98453f5ec089d0f3bae366b7505/notebook.ipynb)
   
-  ![image](https://github.com/user-attachments/assets/db7b0ece-d311-4fea-9700-13a09417d148)
-
-2. Explore Dataset Information
-
-  [Explore Dataset Information](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/images/Explore%20Dataset%20Information.png)
+  1. Load Dataset
   
-  ![image](https://github.com/user-attachments/assets/493258b7-c511-4c27-a206-a3de6e801e88)
-
-3. Convert Dataset to DataFrame for Exploration
-
-  [Convert Dataset to DataFrame for Exploration](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/images/Convert%20Dataset%20to%20DataFrame%20for%20Exploration.png)
+    [Load Dataset](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/images/load_dataset.png)
+    
+    ![image](https://github.com/user-attachments/assets/db7b0ece-d311-4fea-9700-13a09417d148)
   
-  ![image](https://github.com/user-attachments/assets/1b580b05-d4ea-4b65-a697-a70b64044853)
-
-4. Visualize Sample Data
-
-  [Visualize Sample Data](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/images/Visualize%20Sample%20Data.png)
+  2. Explore Dataset Information
   
-  ![image](https://github.com/user-attachments/assets/aefcaff0-3baf-47f0-af17-82230297a434)
-
-5. Data Preprocessing and Augmentation with Auto Tune
+    [Explore Dataset Information](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/images/Explore%20Dataset%20Information.png)
+    
+    ![image](https://github.com/user-attachments/assets/493258b7-c511-4c27-a206-a3de6e801e88)
+  
+  3. Convert Dataset to DataFrame for Exploration
+  
+    [Convert Dataset to DataFrame for Exploration](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/images/Convert%20Dataset%20to%20DataFrame%20for%20Exploration.png)
+    
+    ![image](https://github.com/user-attachments/assets/1b580b05-d4ea-4b65-a697-a70b64044853)
+  
+  4. Visualize Sample Data
+  
+    [Visualize Sample Data](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/images/Visualize%20Sample%20Data.png)
+    
+    ![image](https://github.com/user-attachments/assets/aefcaff0-3baf-47f0-af17-82230297a434)
+  
+  5. Data Preprocessing and Augmentation with Auto Tune
 
 
 ## Modelling Modules
