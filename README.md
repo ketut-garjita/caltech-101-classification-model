@@ -133,8 +133,6 @@ The model is based on the MobileNetV2 architecture with transfer learning:
   python train_model.py  
   ```
 - Predict model
-
-  Open new terminal session.
   
   ```
   python predict_model.py
@@ -280,6 +278,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
      ```
 
 #### Option 2: Using (Pull) DockerHub Image
+
    - Pull Image
      
      ```
