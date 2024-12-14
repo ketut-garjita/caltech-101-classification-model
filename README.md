@@ -173,7 +173,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 
   _RUN pip install flask tensorflow pillow tensorflow_datasets matplotlib_
   
-- Install curl package
+- Install curl package (this step only need once)
   ```
   docker exec -it caltech101-cnn-model-service bash
   apt update
