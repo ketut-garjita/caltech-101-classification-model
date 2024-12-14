@@ -296,12 +296,12 @@ The model is based on the MobileNetV2 architecture with transfer learning:
        ```
        docker exec -it caltech101-cnn-model-service bash
        ```
-     - Install curl package (only need one time of installation)
+     - Install curl package (this etsp only need once)
        ```
        apt update
        apt install curl
        ```
-     - Add an execute mode of the curl.sh (only need one time)
+     - Add an execute mode of the curl.sh (this step only need once)
        ```
        chmod +x curl.sh
        ```
