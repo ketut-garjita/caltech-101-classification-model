@@ -313,6 +313,10 @@ The model is based on the MobileNetV2 architecture with transfer learning:
        ```
        ls -l output/prediction.png
        ```
+     - Stop container
+       ```
+       docker stop caltech101-cnn-model-service
+       ```
   
 
 ## Outputs
