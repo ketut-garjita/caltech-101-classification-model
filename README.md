@@ -234,12 +234,11 @@ The model is based on the MobileNetV2 architecture with transfer learning:
       sudo apt install python3.12-venv
       source myenv/bin/activate
       ```
-   -  Clone this repository
-     
-     ```
-     git clone https://github.com/ketut-garjita/caltech-101-classification-model.git  
-     cd caltech-101-classification-model 
-     ```  
+   -  Clone this repository     
+      ```
+      git clone https://github.com/ketut-garjita/caltech-101-classification-model.git  
+      cd caltech-101-classification-model 
+      ```  
    - Install library dependences
      
      ```
