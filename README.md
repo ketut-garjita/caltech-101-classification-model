@@ -152,7 +152,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 - Check prediction result on output/ directory
 
   ```
-  ls output/prediction.png
+  ls -l output/prediction.png
   ```
   
 - Stop predict model session
@@ -191,7 +191,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
   ```
 - Check prediction result on output/ directory
   ```
-  ls output/prediction.png
+  ls -l output/prediction.png
   ```
   Or from terminal command prompt:
   ```
@@ -269,7 +269,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
    - Check prediction result on output/ directory
    
      ```
-     ls output/prediction.png
+     ls -l output/prediction.png
      ```
      
    - Stop predict model session
