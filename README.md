@@ -209,6 +209,8 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 
   Repository Name: ketutgarjita/caltech101-cnn-model
 
+  Make public
+
 - Push local image to DockerHub
   ```
   docker tag caltech101-cnn-model:latest ketutgarjita/caltech101-cnn-model:latest
