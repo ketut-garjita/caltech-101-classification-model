@@ -265,12 +265,14 @@ The model is based on the MobileNetV2 architecture with transfer learning:
      ```
      ./curl.sh
      ```
-     
+          
    - Check prediction result on output/ directory
    
      ```
      ls -l output/prediction.png
      ```
+
+     Output should be like this: [prediction.png](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/output/prediction.png)
      
    - Stop predict model session
      ```
