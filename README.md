@@ -124,7 +124,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
   git clone https://github.com/ketut-garjita/caltech-101-classification-model.git  
   cd caltech-101-classification-model 
   ```  
-- Install library dependences
+- Install library dependencies
   ```
   pip install flask tensorflow pillow tensorflow_datasets matplotlib
   ```
