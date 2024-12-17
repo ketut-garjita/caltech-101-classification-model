@@ -249,8 +249,50 @@ On AWS Lambda, we can only write to the /tmp directory, so all files: model, out
      ```
      docker push 734800375959.dkr.ecr.ap-southeast-3.amazonaws.com/caltech101-cnn-lambda:latest
      ```
-     
+   - Create Lambda Role
 
+     - Create Trust Policy for AWS Lambda (**trust-policy.json**)
+       ```
+       {
+          "Version": "2012-10-17",
+          "Statement": {
+            "Effect": "Allow",
+            "Principal": {
+              "Service": "lambda.amazonaws.com"
+            },
+            "Action": "sts:AssumeRole"
+          }
+        }
+       ```
+     - Create role
+       ```
+       aws iam create-role \
+       --role-name caltech101-cnn-model-role \
+       --assume-role-policy-document file://trust-policy.json
+       ```
+
+     - Attach policy to role
+       ```
+       aws iam attach-role-policy \
+       --role-name caltech101-cnn-model-role \
+       --policy-arn arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+       ```
+       
+     - Verify role and policy
+       ```
+       aws iam get-role --role-name caltech101-cnn-model-role
+       aws iam list-attached-role-policies --role-name caltech101-cnn-model-role
+
+  - Create AWS Lambda Function:
+    ```
+    aws lambda create-function \
+    --function-name caltech-101-predictor \
+    --package-type Image \
+    --role arn:aws:iam::734800375959:role/caltech101-cnn-model-role \
+    --code ImageUri=734800375959.dkr.ecr.ap-southeast-3.amazonaws.com/caltech101-cnn-lambda:latest
+    ```
+ - Test Using Curl - AWS Lambda - API Gateway
+   
 
 #### Option 2: Install on EC2 Instance Virtual Environment
 
