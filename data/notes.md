@@ -1,4 +1,4 @@
-## Note:
+## Notes:
 
 Data is downloaded in the train_model.py process.
 
