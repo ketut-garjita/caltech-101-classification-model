@@ -252,7 +252,7 @@ On AWS Lambda, we can only write to the /tmp directory, so all files: model, out
      
 
 
-#### Option 1: Install on EC2 Instance Virtual Environment
+#### Option 2: Install on EC2 Instance Virtual Environment
 
    - Start AWS EC2 Instance
    - Connect to Instance
@@ -308,7 +308,7 @@ On AWS Lambda, we can only write to the /tmp directory, so all files: model, out
      Ctrl-C
      ```
 
-#### Option 2: Using (Pull) DockerHub Image
+#### Option 3: Using (Pull) DockerHub Image
 
    - Pull Image
      
