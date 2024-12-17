@@ -1,31 +1,54 @@
 from flask import Flask, request, jsonify, send_file
 import tensorflow as tf
-import numpy as np
 import tensorflow_datasets as tfds
+import numpy as np
 import os
-
-# Set Matplotlib cache directory to 
-os.environ["MPLCONFIGDIR"] = "/tmp/matplotlib"
-
-# Import Matplotlib after configuration
+import boto3
 import matplotlib.pyplot as plt
 
-# Load model and dataset
-model_path = 'model/caltech101_cnn_model.keras'
-model = tf.keras.models.load_model(model_path)
+# Environment variable for TensorFlow (disabling GPU usage in Lambda)
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+os.environ["MPLCONFIGDIR"] = "/tmp/matplotlib"
 
-# Load dataset
-#tfds_dir = "data/"
-tfds_dir = "data/"
+# Initialize Flask app
+app = Flask(__name__)
 
+# Load model from S3 (or local if small enough)
+def load_model_from_s3(bucket_name, model_key, local_path):
+    s3 = boto3.client('s3')
+    s3.download_file(bucket_name, model_key, local_path)
+    model = tf.keras.models.load_model(local_path)
+    return model
+
+# Load dataset from S3 and save locally to /tmp
+def download_data_from_s3(bucket_name, data_key, local_path):
+    s3 = boto3.client('s3')
+    s3.download_file(bucket_name, data_key, local_path)
+    return local_path
+
+def _parse_function(proto):
+    # Schema definition
+    feature_description = {
+        "image": tf.io.FixedLenFeature([], tf.string),
+        "label": tf.io.FixedLenFeature([], tf.int64)
+    }
+    parsed_features = tf.io.parse_single_example(proto, feature_description)
+    # Decode image
+    image = tf.io.decode_jpeg(parsed_features["image"], channels=3)
+    label = parsed_features["label"]
+    return image, label
+    
+# Load model
+model_path = '/tmp/caltech101_cnn_model.keras'
+model = load_model_from_s3('dtcml-outputs', 'caltech101_cnn_model.keras', model_path)
+
+# Dataset (full) and test_data
+tfds_dir = "/tmp/data/"
 dataset, info = tfds.load("caltech101", as_supervised=True, with_info=True, data_dir=tfds_dir)
 test_data = dataset["test"].map(lambda img, lbl: (tf.image.resize(img, (128, 128)) / 255.0, lbl)).batch(32)
 
-# Flask App
-app = Flask(__name__)
-
 # Prediction Function
-def visualize_predictions(dataset, model, num_images=16, output_file="output/Visualize_Prediction.png"):
+def visualize_predictions(dataset, model, num_images=16, output_file="/tmp/Visualize_Prediction.png"):
     class_names = info.features['label'].names
     for images, labels in dataset.take(1):
         preds = model.predict(images)
@@ -40,18 +63,30 @@ def visualize_predictions(dataset, model, num_images=16, output_file="output/Vis
         plt.tight_layout()
         plt.savefig(output_file)
         plt.close()
-
+        
+# Flask Route: Visualize Predictions
 @app.route('/visualize_predictions', methods=['GET'])
 def handle_visualize_predictions():
     try:
         num_images = int(request.args.get('num_images', 16))
-        output_file = "output/Visualize_Prediction.png"
+        if num_images <= 0:
+            raise ValueError("num_images must be a positive integer.")
         
+        output_file = "/tmp/Visualize_Prediction.png"
         visualize_predictions(test_data, model, num_images, output_file)
         
         return send_file(output_file, mimetype='image/png')
+    
+    except ValueError as ve:
+        return jsonify({"error": f"Invalid input: {str(ve)}"}), 400
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        return jsonify({"error": f"Error processing request: {str(e)}"}), 500
 
+# Lambda handler function
+def handler(event, context):
+    with app.app_context():
+        return app.full_dispatch_request()
+
+# Start the Flask app (for local testing)
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

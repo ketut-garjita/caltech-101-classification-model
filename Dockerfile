@@ -1,23 +1,24 @@
-# Base Image
-FROM python:3.11-slim
+# Use AWS Lambda base image for Python 3.11
+FROM public.ecr.aws/lambda/python:3.11
 
 # Set working directory
 WORKDIR /app
 
-# Create directories
-RUN mkdir /app/model /app/data /app/output
+# Create necessary directories
+RUN mkdir -p /app/model /tmp/output
 
-# Copy files
-COPY predict_model.py /app
-COPY data /app/data
-COPY model/caltech101_cnn_model.keras /app/model
-COPY curl.sh /app
+# Copy application files
+COPY predict_model.py /app/predict_model.py
+COPY model/caltech101_cnn_model.keras /app/model/caltech101_cnn_model.keras
+COPY curl.sh /app/curl.sh
+COPY curl_app.py /app/curl_app.py
 
 # Install dependencies
-RUN pip install flask tensorflow pillow tensorflow_datasets matplotlib
+RUN pip install flask tensorflow tensorflow_datasets pillow matplotlib boto3
+RUN yum install -y curl
 
-# Expose port
+# Expose the port (only for local testing, Lambda won't need this)
 EXPOSE 5000
 
-# Command to run the application
-CMD ["python", "predict_model.py"]
+# Command to run the Flask application
+CMD ["predict_model.handler"]
