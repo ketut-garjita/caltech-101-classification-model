@@ -109,10 +109,11 @@ On AWS Lambda, we can only write to the /tmp directory, so all files: model, out
 
    Local server: [curl.sh](https://github.com/ketut-garjita/caltech-101-classification-model/blob/4acbd1cd747e9a0e03c8e033aed1096648da2e69/curl.sh)
 
-   AWS Lambda: [curl_lambda.py]()
    ```
    curl "http://localhost:5001/visualize_predictions?num_images=16" --output outputs/prediction.png
    ```
+
+   AWS Lambda: [curl_lambda.py](https://github.com/ketut-garjita/caltech-101-classification-model/blob/483a644cd3a889861dce568883da7acd0eaf9b85/curl_lambda.py)
    
    
 ## Installation and Deployment
