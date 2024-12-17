@@ -230,7 +230,27 @@ On AWS Lambda, we can only write to the /tmp directory, so all files: model, out
   docker push ketutgarjita/caltech101-cnn-lambda:latest
   ```
   
-### 4. AWS Lambda 
+### 4. AWS Cloud
+
+#### Option 1: AWS Lambda
+   - Authenticate Docker to AWS ECR, use the AWS CLI to authenticate Docker client
+     ```
+     aws ecr get-login-password --region ap-southeast-3 | docker login --username AWS --password-stdin 734800375959.dkr.ecr.ap-southeast-3.amazonaws.com 
+     ```
+   - Create repository
+     ```
+     aws ecr create-repository --repository-name caltech101-cnn-lambda
+     ```
+   - Tag image to AWS
+     ```
+     docker tag caltech101-cnn-lambda 734800375959.dkr.ecr.ap-southeast-3.amazonaws.com/caltech101-cnn-lambda:latest
+     ```
+   - Push image
+     ```
+     docker push 734800375959.dkr.ecr.ap-southeast-3.amazonaws.com/caltech101-cnn-lambda:latest
+     ```
+     
+
 
 #### Option 1: Install on EC2 Instance Virtual Environment
 
