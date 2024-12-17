@@ -457,4 +457,4 @@ The model uses transfer learning for computational efficiency. The base MobileNe
 
 ## Acknowledgments
 - TensorFlow team for the datasets and tools.
-- Caltech for providing the dataset
+- Tools: TensorFlow, Tensorflow_Dataset, Flask, Docker, Boto3
