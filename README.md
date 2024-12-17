@@ -292,7 +292,17 @@ On AWS Lambda, we can only write to the /tmp directory, so all files: model, out
     --code ImageUri=734800375959.dkr.ecr.ap-southeast-3.amazonaws.com/caltech101-cnn-lambda:latest
     ```
  - Test Using Curl - AWS Lambda - API Gateway
+
+   [curl_app.py](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/curl_app.py)
+
+   ```
+   python curl_app.py
+   ```
    
+   ![image](https://github.com/user-attachments/assets/9eb88a9f-6743-40ab-ac5a-0c3c81541289)
+
+   ![image](https://github.com/user-attachments/assets/087eca28-ba93-4d1a-bd73-e245ad8483fb)
+
 
 #### Option 2: Install on EC2 Instance Virtual Environment
 
