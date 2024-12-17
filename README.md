@@ -85,7 +85,7 @@ On AWS Lambda, we can only write to the /tmp directory, so all files: model, out
 
 ## Modelling Modules
 
-1. Prepare model (**train_model.py**)
+1. Build model (**train_model.py**)
 
    [train_model.py](https://github.com/ketut-garjita/caltech-101-classification-model/blob/3026834a2fcd82ef0ea8de1a7db6102efb417b5c/train_model.py)
     
