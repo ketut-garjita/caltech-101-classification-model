@@ -47,6 +47,11 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 └── images/                 # Notebook images screenshots
 ```
 
+**Note:**
+
+On AWS Lambda, we can only write to the /tmp directory, so all files: models, outputs and data are stored in the /tmp directory.
+
+
 ## Notebook
 
   [notebook.ipynb](https://github.com/ketut-garjita/caltech-101-classification-model/blob/a2089e3adf20a98453f5ec089d0f3bae366b7505/notebook.ipynb)
