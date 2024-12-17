@@ -167,11 +167,11 @@ On AWS Lambda, we can only write to the /tmp directory, so all files: model, out
 
 - Build the Docker image
   ```
-  docker build -t caltech101-cnn-model .
+  docker build -t caltech101-cnn-lambda .
   ```
 - Run the container
   ```
-  docker run -d -p 5000:5000 --name caltech101-cnn-model-service caltech101-cnn-model
+  docker run -d -p 5000:5000 --name caltech101-cnn-lambda-service caltech101-cnn-lambda
   ```
   
     _Note: Libraries dependecies are included in Dockerfile script_:
@@ -182,7 +182,7 @@ On AWS Lambda, we can only write to the /tmp directory, so all files: model, out
      
      - Connect to container
        ```
-       docker exec -it caltech101-cnn-model-service bash
+       docker exec -it caltech101-cnn-lambda-service bash
        ```
      - Install curl package (this etsp only need once)
        ```
@@ -207,7 +207,7 @@ On AWS Lambda, we can only write to the /tmp directory, so all files: model, out
        ```
   - Stop container
      ```
-     docker stop caltech101-cnn-model-service
+     docker stop caltech101-cnn-lambda-service
      ```
 
      
@@ -217,20 +217,20 @@ On AWS Lambda, we can only write to the /tmp directory, so all files: model, out
 
   [https://hub.docker.com](https://hub.docker.com/)
 
-  Repository Name: ketutgarjita/caltech101-cnn-model
+  Repository Name: ketutgarjita/caltech101-cnn-lambda
 
   Make public
 
 - Push local image to DockerHub
   ```
-  docker tag caltech101-cnn-model:latest ketutgarjita/caltech101-cnn-model:latest
+  docker tag caltech101-cnn-lambda:latest ketutgarjita/caltech101-cnn-lambda:latest
   docker login
      Username: 
      Password:
-  docker push ketutgarjita/caltech101-cnn-model:latest
+  docker push ketutgarjita/caltech101-cnn-lambda:latest
   ```
   
-### 4. AWS Cloud
+### 4. AWS Lambda 
 
 #### Option 1: Install on EC2 Instance Virtual Environment
 
@@ -293,18 +293,18 @@ On AWS Lambda, we can only write to the /tmp directory, so all files: model, out
    - Pull Image
      
      ```
-     docker pull ketutgarjita/caltech101-cnn-model:latest
+     docker pull ketutgarjita/caltech101-cnn-lambda:latest
      ```
    - Start and Run Container
      
      ```
-     docker run -d -p 5000:5000 --name caltech101-cnn-model-service ketutgarjita/caltech101-cnn-model
+     docker run -d -p 5000:5000 --name caltech101-cnn-lambda-service ketutgarjita/caltech101-cnn-lambda
      ```
    - Test model prediction
      
      - Connect to container
        ```
-       docker exec -it caltech101-cnn-model-service bash
+       docker exec -it caltech101-cnn-lambda-service bash
        ```
      - Install curl package (this etsp only need once)
        ```
@@ -329,7 +329,7 @@ On AWS Lambda, we can only write to the /tmp directory, so all files: model, out
        ```
   - Stop container
      ```
-     docker stop caltech101-cnn-model-service
+     docker stop caltech101-cnn-lambda-service
      ```
   
 
