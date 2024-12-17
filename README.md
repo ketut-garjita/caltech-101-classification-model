@@ -49,7 +49,7 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 
 **Note:**
 
-On AWS Lambda, we can only write to the /tmp directory, so all files: models, outputs and data are stored in the /tmp directory.
+On AWS Lambda, we can only write to the /tmp directory, so all files: model, outputs and data are stored in the /tmp directory.
 
 
 ## Notebook
