@@ -9,8 +9,9 @@ The Caltech-101 dataset is a well-known benchmark for image classification tasks
 - Introduction
 - Project Overview
 - Data Description
-- Features
 - Architecture
+- Features
+- Targte (Goal)
 - Repository Structure
 - Notebook
 - Model
@@ -39,20 +40,24 @@ This project utilizes TensorFlow's deep learning capabilities to preprocess, aug
 - Image Resolution: Varies, resized to 128x128 pixels for this project.
 - Train/Test Split: Automatically handled by TensorFlow Datasets.
 
-
-## Features
-- Input images resized to a uniform size of 128x128 pixels.
-- Normalized pixel values for faster convergence.
-- Data augmentation with random flips, rotations, and zooms to improve generalization.
-- Exploratory Data Analysis (EDA)
-
-
+  
 ## Architecture
 The model is based on the MobileNetV2 architecture with transfer learning:
 - Base Model: MobileNetV2 pre-trained on ImageNet.
 - Global Average Pooling: Reduces feature maps into a single vector.
 - Dropout Layer: Prevents overfitting by randomly disabling neurons.
 - Output Layer: Dense layer with softmax activation for 102 classes.
+
+
+## Features
+- Input images resized to a uniform size of 128x128 pixels.
+- Normalized pixel values for faster convergence.
+- Data augmentation with random flips, rotations, and zooms to improve generalization.
+- Exploratory Data Analysis (EDA)
+  
+
+## Target (Goal)
+The primary goal of this project is to classify images into one of 101 object categories (plus a background category) using deep learning. By leveraging a MobileNetV2-based transfer learning model, the project aims to achieve high classification accuracy while maintaining computational efficiency. The target is to fine-tune the pre-trained MobileNetV2 architecture on the Caltech-101 dataset and produce a reliable model capable of predicting the correct object category for new input images.
 
 
 ## Repository Structure
