@@ -5,6 +5,7 @@
 ## Introduction
 The Caltech-101 dataset is a well-known benchmark for image classification tasks. It consists of 101 object categories plus a background category, making it an ideal candidate for testing deep learning models. This project addresses the problem of accurately classifying images from this dataset using a Convolutional Neural Network (CNN).
 
+---
 
 ## Table of Contents
 - Introduction
@@ -29,6 +30,7 @@ The Caltech-101 dataset is a well-known benchmark for image classification tasks
 - Suggestions for Improvement
 - Acknowledgments
 
+---
 
 ## Project Overview
 This project utilizes TensorFlow's deep learning capabilities to preprocess, augment, and classify images from the Caltech-101 dataset. A MobileNetV2-based transfer learning model is fine-tuned to achieve high accuracy while maintaining computational efficiency.
@@ -41,6 +43,7 @@ This project utilizes TensorFlow's deep learning capabilities to preprocess, aug
 - Image Resolution: Varies, resized to 128x128 pixels for this project.
 - Train/Test Split: Automatically handled by TensorFlow Datasets.
 
+---
   
 ## Architecture
 The model is based on the MobileNetV2 architecture with transfer learning:
@@ -49,13 +52,15 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 - Dropout Layer: Prevents overfitting by randomly disabling neurons.
 - Output Layer: Dense layer with softmax activation for 102 classes.
 
+---
 
 ## Features
 - Input images resized to a uniform size of 128x128 pixels.
 - Normalized pixel values for faster convergence.
 - Data augmentation with random flips, rotations, and zooms to improve generalization.
 - Exploratory Data Analysis (EDA)
-  
+
+---
 
 ## Target (Goal)
 The primary goal of this project is to classify images into one of 101 object categories (plus a background category) using deep learning. By leveraging a MobileNetV2-based transfer learning model, the project aims to achieve high classification accuracy while maintaining computational efficiency. The target is to fine-tune the pre-trained MobileNetV2 architecture on the Caltech-101 dataset and produce a reliable model capable of predicting the correct object category for new input images.
@@ -65,6 +70,7 @@ The primary goal of this project is to classify images into one of 101 object ca
 - Transfer Learning Efficiency: Combines the power of pre-trained models with custom training for the given dataset.
 - Practical Applications: Useful in real-world applications such as image tagging, content filtering, and object detection in various domains.
 
+---
 
 ## Repository Structure
 ```
@@ -86,6 +92,7 @@ The primary goal of this project is to classify images into one of 101 object ca
 
 On AWS Lambda, we can only write to the /tmp directory, so all files: model, outputs and data are stored in the /tmp directory.
 
+---
 
 ## Notebook
 
@@ -117,6 +124,7 @@ On AWS Lambda, we can only write to the /tmp directory, so all files: model, out
   
   5. Data Preprocessing and Augmentation with Auto Tune
 
+---
 
 ## Model
 
@@ -149,7 +157,8 @@ On AWS Lambda, we can only write to the /tmp directory, so all files: model, out
    ```
 
    AWS Lambda: [curl_lambda.py](https://github.com/ketut-garjita/caltech-101-classification-model/blob/483a644cd3a889861dce568883da7acd0eaf9b85/curl_lambda.py)
-   
+
+---
    
 ## Installation and Deployment
 
@@ -448,6 +457,7 @@ On AWS Lambda, we can only write to the /tmp directory, so all files: model, out
      docker stop caltech101-cnn-lambda-service
      ```
   
+---
 
 ## Outputs
 - Trained Model: Saved as caltech101_cnn_model.keras.
@@ -473,16 +483,21 @@ On AWS Lambda, we can only write to the /tmp directory, so all files: model, out
 
     ![image](https://github.com/user-attachments/assets/7cc66253-e8e0-4b3f-a432-e3de126ed3e2)   
 
+---
 
 ## Challenges and Considerations
 - Dataset Imbalance: Some categories have fewer images. This was mitigated using data augmentation.
 - Overfitting: Handled with dropout and early stopping.
 - Computational Resources: Transfer learning significantly reduced training time and resource requirements.
 
+---
+
 ## Suggestions for Improvement
 - Experiment with fine-tuning the base model layers for potentially higher accuracy.
 - Incorporate additional data augmentation techniques.
 - Deploy the model as an API for real-time predictions.
+
+---
 
 ## Acknowledgments
 - TensorFlow team for the datasets and tools.
