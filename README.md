@@ -1,5 +1,6 @@
 # Caltech-101 Image Classification with CNN
 
+---
 
 ## Introduction
 The Caltech-101 dataset is a well-known benchmark for image classification tasks. It consists of 101 object categories plus a background category, making it an ideal candidate for testing deep learning models. This project addresses the problem of accurately classifying images from this dataset using a Convolutional Neural Network (CNN).
