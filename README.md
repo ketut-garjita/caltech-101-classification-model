@@ -215,11 +215,6 @@ On AWS Lambda, we can only write to the /tmp directory, so all files: model, out
        ```
        docker exec -it caltech101-cnn-lambda-service bash
        ```
-     - Install curl package (this etsp only need once)
-       ```
-       apt update
-       apt install curl
-       ```
      - Add an execute mode of the curl.sh (this step only need once)
        ```
        chmod +x curl.sh
