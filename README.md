@@ -11,7 +11,7 @@ The Caltech-101 dataset is a well-known benchmark for image classification tasks
 - Data Description
 - Architecture
 - Features
-- Targte (Goal)
+- Target (Goal)
 - Repository Structure
 - Notebook
 - Model
