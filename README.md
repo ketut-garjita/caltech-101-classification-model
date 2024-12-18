@@ -1,7 +1,31 @@
 # Caltech-101 Image Classification with CNN
 
+
 ## Introduction
 The Caltech-101 dataset is a well-known benchmark for image classification tasks. It consists of 101 object categories plus a background category, making it an ideal candidate for testing deep learning models. This project addresses the problem of accurately classifying images from this dataset using a Convolutional Neural Network (CNN).
+
+
+## Table of Contents
+- Introduction
+- Project Overview
+- Data Description
+- Features
+- Architecture
+- Repository Structure
+- Notebook
+- Model
+- Installation and Deployment
+  - Local Server
+  - Docker
+  - Docker Hub
+  - AWS Cloud
+    - Lambda
+    - EC2 VM Instance with VM
+    - Using (Pull) DockerHub Image
+- Outputs
+- Challenges and Considerations
+- Suggestions for Improvement
+- Acknowledgments
 
 
 ## Project Overview
@@ -443,11 +467,6 @@ On AWS Lambda, we can only write to the /tmp directory, so all files: model, out
     [Visualize_Prediction](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/output/prediction.png)
 
     ![image](https://github.com/user-attachments/assets/7cc66253-e8e0-4b3f-a432-e3de126ed3e2)   
-
-
-## Model
-
-The model uses transfer learning for computational efficiency. The base MobileNetV2 layers are frozen, and only the top layers are trained on the Caltech-101 dataset.
 
 
 ## Challenges and Considerations
