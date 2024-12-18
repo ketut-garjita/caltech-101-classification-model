@@ -20,9 +20,9 @@ The Caltech-101 dataset is a well-known benchmark for image classification tasks
   - Docker
   - Docker Hub
   - AWS Cloud
-    - Lambda
-    - EC2 VM Instance with VM
-    - Using (Pull) DockerHub Image
+    - Option 1: Lambda
+    - Option 2: EC2 VM Instance with VM
+    - Option 3: Using (Pull) DockerHub Image
 - Outputs
 - Challenges and Considerations
 - Suggestions for Improvement
