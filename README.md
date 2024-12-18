@@ -293,6 +293,7 @@ On AWS Lambda, we can only write to the /tmp directory, so all files: model, out
        aws iam list-attached-role-policies --role-name caltech101-cnn-model-role
 
   - Create AWS Lambda Function:
+    
     ```
     aws lambda create-function \
     --function-name caltech-101-predictor \
@@ -300,12 +301,14 @@ On AWS Lambda, we can only write to the /tmp directory, so all files: model, out
     --role arn:aws:iam::734800375959:role/caltech101-cnn-model-role \
     --code ImageUri=734800375959.dkr.ecr.ap-southeast-3.amazonaws.com/caltech101-cnn-lambda:latest
     ```
-   - Increase time out and memory
-   
     
-   - Create API Gateway
+  - Increase time out and memory
 
-     ![image](https://github.com/user-attachments/assets/6c4bf1ed-549e-4e53-b304-140d42652e76)
+    <img width="793" alt="image" src="https://github.com/user-attachments/assets/f462cad2-aef4-4be0-963a-111ca7fbcc1a" />
+    
+  - Create API Gateway
+
+    ![image](https://github.com/user-attachments/assets/6c4bf1ed-549e-4e53-b304-140d42652e76)
 
   - Test Using Curl - AWS Lambda - API Gateway
 
