@@ -300,6 +300,8 @@ On AWS Lambda, we can only write to the /tmp directory, so all files: model, out
     --role arn:aws:iam::734800375959:role/caltech101-cnn-model-role \
     --code ImageUri=734800375959.dkr.ecr.ap-southeast-3.amazonaws.com/caltech101-cnn-lambda:latest
     ```
+   - Increase time out and memory
+   
     
    - Create API Gateway
 
