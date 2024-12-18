@@ -184,7 +184,6 @@ On AWS Lambda, we can only write to the /tmp directory, so all files: model, out
   python train_model.py  
   ```
 - Predict model
-  
   ```
   python predict_model.py
   ```
@@ -193,7 +192,6 @@ On AWS Lambda, we can only write to the /tmp directory, so all files: model, out
 - Test model prediction
 
   Open new terminal session.
-  
   ```
   ./curl.sh
   ```
