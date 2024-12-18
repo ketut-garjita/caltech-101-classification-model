@@ -59,6 +59,11 @@ The model is based on the MobileNetV2 architecture with transfer learning:
 ## Target (Goal)
 The primary goal of this project is to classify images into one of 101 object categories (plus a background category) using deep learning. By leveraging a MobileNetV2-based transfer learning model, the project aims to achieve high classification accuracy while maintaining computational efficiency. The target is to fine-tune the pre-trained MobileNetV2 architecture on the Caltech-101 dataset and produce a reliable model capable of predicting the correct object category for new input images.
 
+**Why This is Important:**
+- Object Recognition: Automates the process of identifying and classifying objects in images.
+- Transfer Learning Efficiency: Combines the power of pre-trained models with custom training for the given dataset.
+- Practical Applications: Useful in real-world applications such as image tagging, content filtering, and object detection in various domains.
+
 
 ## Repository Structure
 ```
