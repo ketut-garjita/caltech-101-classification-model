@@ -467,7 +467,10 @@ On AWS Lambda, we can only write to the /tmp directory, so all files: model, out
     
     ![image](https://github.com/user-attachments/assets/2e053933-452b-428d-ae96-84253df49eee)
 
-  - True vs Prediction (output of **./curl.sh** and **python curl_lambda.py**):
+  - True vs Prediction
+    This is output of:
+    - **./curl.sh** (on server)
+    - **python curl_lambda.py** (lambda, output file save on S3)
     
     [Visualize_Prediction](https://github.com/ketut-garjita/caltech-101-classification-model/blob/main/output/prediction.png)
 
