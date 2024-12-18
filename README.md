@@ -83,7 +83,7 @@ On AWS Lambda, we can only write to the /tmp directory, so all files: model, out
   5. Data Preprocessing and Augmentation with Auto Tune
 
 
-## Modelling Modules
+## Model
 
 1. Build model (**train_model.py**)
 
