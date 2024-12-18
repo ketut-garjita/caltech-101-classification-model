@@ -457,4 +457,4 @@ The model uses transfer learning for computational efficiency. The base MobileNe
 
 ## Acknowledgments
 - TensorFlow team for the datasets and tools.
-- Tools: TensorFlow, TensorFlow_Datasets, Pandas, Numpy, Matplotlib, Flask, Docker, Boto3
+- Tools: TensorFlow, TensorFlow_Datasets, Pandas, Numpy, Matplotlib, Flask, Docker, AWS (Boto3, S3, IAM, ECR, Lambda, API Gateway, EC2).
